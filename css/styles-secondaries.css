@@ -1,0 +1,835 @@
+:root {
+    --darkblue: #000022;
+    --celeste: #3C75CA;
+    --footer-color: #D8E2F0;
+    --light-celeste: #E5EDFF;
+    --cta-color: #E01B1B;
+    --typical-div-margin: 3.5em 1.875em;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+/* ====================
+        Typography
+   ==================== */
+
+   
+body {
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+}
+
+h1 {
+    font-size: 1.75rem;
+}
+
+h2 {
+    font-size: 1.175rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 3.5px black solid;
+    width: fit-content;
+    margin-bottom: 1.5em;
+}
+
+
+.extra-bold  {
+    font-weight: 900;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.icon-title {
+    text-transform: uppercase;
+    font-size: .675rem;
+    font-weight: 900;
+    letter-spacing: .5;
+}
+
+.common-button {
+    padding: 0.6em 1.75em;
+    margin: 1.5em 0 0;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    background-color: var(--cta-color);
+    cursor: pointer;
+    transition: background-color ease 0.2s;
+}
+
+
+.common-button:hover,
+.common-button:focus {
+background-color: #e24b4b;
+}
+
+@media screen and (min-width: 992px) {
+    h1 {
+        font-size: clamp(2.5rem, 2.5vw, 3.75rem);
+    }
+
+    h2 {
+        font-size: clamp(1.5rem, 1.75vw, 2.5rem);
+    }
+}
+/* ====================
+            Nav
+   ==================== */
+
+nav {
+    padding: 0 2em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: clamp(2.5rem, 8vh, 3.75rem);
+    background-color: var(--celeste);
+    top: 0;
+    z-index: 1;
+}
+
+.second-background-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: clamp(3rem, 9vh, 4.25rem);
+    background-color: var(--darkblue);
+    z-index: 2;
+}
+
+.nav-menu { /* momentaneo till js code */
+    display: none;
+}
+
+#nav-selector {
+    position: fixed;
+    width: 90%;
+    max-width: 100vw;
+    z-index: 9999999;
+    padding: 0 5vw ;
+}
+
+.nav-menu-mobile {
+    z-index: 1;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--celeste);
+    height: 100vh;
+    width: 50vw;
+    transform: translateX(150%);
+    justify-content: space-around;
+    padding: 0 3em;
+    transition: all 0.3s ease-in-out;
+    margin-top: -4.5em;
+}
+
+
+.el-mobile {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.actif{
+    padding: 0.25em 0;
+    border-bottom: 5px solid white;
+}
+
+.nav-menu-mobile[data-visible="true"] {
+    transform: translateX(50%);
+}
+
+.nav-logo img{
+    min-height: 1em;
+    max-height: 1.5em;
+}
+
+.menu-toggle {
+    display: fixed;
+    z-index: 9999;
+    background: url(../images/miscellaneous/Hamburger_icon.png);
+    background-size: 1.875rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 3rem;
+    aspect-ratio: 1;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+
+.menu-toggle[aria-expanded="true"] {
+    background: url(../images/miscellaneous/x-icon.png);
+    background-size: 1.25rem;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.el-desktop-nav {
+    display: none;
+}
+
+.cta {
+    padding: 0.65em 1em;
+    background-color: var(--cta-color);
+    border-radius: .45em;
+}
+
+@media screen and (min-width: 600px) and (max-width: 1023px) {
+    .nav-menu-mobile {
+        width: 100vw;
+        transform: translateX(150%);
+    }
+    .nav-menu-mobile[data-visible="true"] {
+        transform: translateX(50%);
+    }
+}
+
+@media screen and (min-width: 992px) {
+
+    #nav-selector  {
+        position: relative;
+        width: auto;
+    }
+    .nav1 {
+        position: sticky;
+        margin-top: -85px;
+        top: 0;
+        width: 100%;
+        height: 70px;
+        background-color: var(--celeste);
+        z-index: 1;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 69.4%, 64% 69.4%, 61% 100%, 0% 100%);
+        transition: clip-path 0.3s ease;
+    }
+    
+    .nav2 {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        height: 85px;
+        background-color: var(--darkblue);
+        z-index: 1;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 74.57%, 58% 74.57%, 55% 100%, 0% 100%);
+        transition: clip-path 0.3s ease;
+    }
+
+    .top-header-bar {
+        padding: 0.925em 1em;
+        display: flex;
+        background-color: var(--darkblue);
+        color: #fff;
+        z-index: 9;
+        border-radius: 0;
+        font-size: 0.875rem;
+    }
+
+    .top-header-bar * {
+        padding: 0 3vw;
+    }
+
+    .nav-logo {
+        margin-bottom: -20px;
+        transition: all ease 300ms
+    }
+
+    #nav-logo-img {
+        height: 3em;
+        max-height: 3em;
+        align-self: flex-end;
+        transition: all ease 300ms
+    }
+    
+    nav {
+        position: sticky;
+        display: flex;
+        top: 0;
+        height: 48.58px;
+        z-index: 1;
+    }
+    .menu-toggle {
+        display: none;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .nav-menu a {
+        text-decoration: none;
+        color: #fff;
+        margin: 0 clamp(0.5em, 1vw, 8em);
+        transition: all ease 300ms
+    }
+
+    .el-inline-desktop {
+        display: inline-block;
+    }
+
+    .el-mobile  {
+        display: none;
+    }
+}
+
+.nav1-scrolled {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 0% 60%, 0% 100%, 0% 100%);
+}
+
+.nav2-scrolled {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 0% 60%, 0% 100%, 0% 100%);
+}
+.nav-scrolled {
+    height: 60%;
+}
+
+.logo-scrolled {
+    margin: 4px 0 0 0;
+    align-self: center;
+}
+
+.nav-heigth {
+    margin-top: 0;
+    height: fit-content;
+}
+
+.nav-js {
+    position: sticky;
+    z-index: 10;
+    padding: 0 min(2.5vw, 6em);
+}
+
+.navbar-links-element-scrolled {
+    margin: auto 0;
+}
+
+.cta-navbar-scrolled {
+    padding: 0.35em 1.5em 0.45em;
+}
+
+.nav-js,
+.nav-logo,
+.navbar-links-element
+ {
+    transition: all 0.5s;
+}
+.cta-navbar,
+.navbar-links-element {
+    transition-duration: 300ms;
+}
+
+
+/* ====================
+        /Nav
+   ==================== */
+
+/* ====================
+        Contatti
+   ==================== */
+
+.telephone-info-top {
+    margin:  var(--typical-div-margin);
+    margin-top: 6em;
+    border: #E01B1B solid 3px;
+    border-radius: .875em;
+    padding: 1.75em;
+}
+
+h3 {
+    font-weight: 900;
+    padding: 0 0 1.25rem;
+}
+
+.contatti-div {
+    padding: var(--typical-div-margin);
+    padding-top: 2.25em;
+    padding-bottom: 2.875em;
+}
+
+.background-contatti-div {
+    background-color: var(--light-celeste);
+}
+
+li {
+    list-style: none;
+    padding: 0.5em 0;
+}
+
+label,
+li p {
+    font-size: .925rem;
+    color: #5F5F5F;
+}
+
+.input-tick {
+     /* Per modificare input checbox https://stackoverflow.com/questions/4148499/how-to-style-a-checkbox-using-css */
+    padding-left: 1em;
+    border: none;
+    border-radius: .5em;
+}
+
+.input-box,
+textarea {
+    margin-top: .5em;
+    padding: 1em;
+    width: 100%;
+    border: none;
+    border-radius: .5em;
+    min-height: 2.75em; 
+}
+
+textarea {
+    min-height: 7em;
+    resize: none;
+}
+
+.h2-map-wrapper h2::before { 
+    display: block; 
+    content: " "; 
+    margin-top: -285px; 
+    height: 345px; 
+    visibility: hidden; 
+    pointer-events: none;
+  }
+
+/* ====================
+        Newsletter
+   ==================== */
+
+.mail-newsletter-div {
+    color: #fff;
+    padding: var(--typical-div-margin);
+}
+
+.background-mail-newsletter-div {
+    background-color: #3C75CA;
+}
+
+.text-newsletter {
+    padding-bottom: 1.25em;
+}
+
+.white {
+    color: #fff;
+}
+
+/* ====================
+        Mappa div
+   ==================== */
+
+.mappa-div {
+    margin: var(--typical-div-margin);
+    margin-bottom: 4em;
+}
+
+.maps {
+    width: 100%;
+    margin: .5em 0 2em;
+}
+
+.text-mappa-div {
+    font-size: .875rem;
+}
+
+.text-box-contacts {
+    max-width: 400px;
+    border: 1px solid #000022;
+    margin: 1em 0;
+    padding: 0 1em 1em;
+}
+
+.title-box-contacts {
+    margin-top: 1em;
+}
+
+.boxing {
+    display: flex;
+    gap: min(5em, 3vw);
+}
+
+
+/* Mobile sizes */
+
+@media screen and (max-width: 290px) {
+
+    .boxing {
+        gap: 1vw;
+    }
+
+    .text-box-contacts {
+        padding: 0 0.2em 0.2em;
+        font-size: .75rem;
+    }
+}
+
+@media screen and (min-width: 291px) and (max-width: 360px){
+    .boxing {
+        gap: 1vw;
+    }
+    .text-box-contacts {
+        padding: 0 .5em .5em;
+        font-size: 0.8rem;
+    }
+}
+
+
+@media screen and (min-width: 600px) {
+
+    .text-mappa-div {
+        font-size: 1rem;
+    }
+
+}
+
+/* Laptop sizes */
+
+@media screen and (min-width: 992px) {
+
+    .telephone-info-top,
+    .contatti-div,
+    .mail-newsletter-div,
+    .mappa-div {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    .mappa-div {
+        padding: var(--typical-div-margin);
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .telephone-info-top {
+        margin: 6em auto 3em;
+        max-width: min(88%, 950px);
+        gap: var(--typical-div-margin);
+    }
+
+    .telephone-info-top h3 {
+        font-size: 1.5rem;
+    }
+
+    .contatti-div {
+        padding-top: 4em;
+    }
+
+    .mappa-div {
+        margin: 4em auto;
+    }
+
+    .footer-wrapper {
+        margin-top: 8em;
+    }
+
+    form {
+        display: flex;
+        gap: 4%;
+        flex-wrap: wrap;
+    }
+
+    li {
+        width: 48%;
+    }
+
+    .textarea-li {
+        width: 65%;
+        justify-self: flex-start;
+    }
+
+    .mail-newsletter-div {
+        display: flex;
+        gap: 4em;
+    }
+
+    .mail-newsletter-div li {
+        display: block;
+        padding-top: 0;
+    }
+
+    .mail-newsletter-div .common-button {
+        width: 208%;
+    }
+
+    .mail-newsletter-div form {
+        flex-grow: 3;
+    }
+
+    .text-newsletter {
+        flex-shrink: 2;
+    }
+
+    .mappa-div {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 3em;
+    }
+    
+    .h2-map-wrapper{
+        width: 100%;
+    }
+
+    .h2-map-wrapper h2 {
+        margin-bottom: 1em;
+    }
+
+    .maps {
+        min-height: 27em;
+    }
+
+    .wrapper-map {
+        flex-grow: 1.5;
+    }
+
+    .text-mappa-div {
+        flex-grow: 1;
+    }
+
+    .title-box-contacts {
+        font-size: 1.125rem;
+        padding-bottom: .5em;
+    }
+
+    .text-box-contacts {
+        margin: 2.25em 0;
+    }
+}
+
+
+/* ====================
+        Footer
+   ==================== */
+
+.footer-wrapper {
+    background-color: var(--footer-color);
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 3em 0 7em 0;
+    line-height: 1.5;
+    font-size: 0.875rem;
+    max-width: 1000px;
+}
+footer img {
+    margin-bottom: 2.25em;
+}
+
+.separator {
+    width: 80%;
+    border-bottom: 2px grey solid;
+    margin-bottom: 2.25em;
+}
+
+.break {
+    margin-bottom: 1em;
+}
+
+.info-footer {
+    font-weight: 900;
+    text-decoration: none;
+    color: #000022;
+}
+
+.informative {
+    display: flex;
+    flex-direction: row;
+    padding: 1em 0;
+}
+
+.informative span {
+    padding: 0 0.75em 0;
+}
+
+@media screen and (min-width: 992px) {
+    footer {
+        text-align: left;
+        align-items: flex-start;
+        padding: 3em 8rem;
+        margin: 0 auto;
+    }
+
+
+    .separator {
+        width: 110%;
+        transform: translateX(-5%);
+    }
+
+    .two-rows {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .second-col-footer {
+        margin: 0 6em;
+    }
+
+    .credits {
+        align-self: flex-end;
+    }
+
+    .info-footer:hover,
+    .info-footer:focus {
+        text-decoration: underline;
+    }
+}
+
+
+
+/* ====================
+      Parco auto page
+   ==================== */
+
+   
+.content-zone-autos {
+    margin:  var(--typical-div-margin);
+    margin-top: 6em;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-car-autoscout {
+    max-width: min(100%, 30em);
+    display: flex;
+    flex-direction: column;
+    margin: 2.5em 0;
+}
+
+.card-car-autoscout:hover,
+.card-car-autoscout:focus {
+    box-shadow: 2px 2px 4px 2px rgb(0,0,0,0.3);
+}
+
+.card-car-autoscout img {
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.card-car-content-zone {
+    background-color: #eeeeee;
+    padding: 1.5em 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.price-tag,
+.autoscout-redirect {
+    background-color: #E01B1B;
+    color: #fff;
+}
+
+.car-title {
+    font-size: 1.5rem;
+    font-variant: small-caps;
+    font-weight: 900;
+    letter-spacing: 1.25;
+    padding-bottom: 0;
+}
+
+.car-description {
+    padding-bottom: 1em;
+    font-size: 1.125rem;
+}
+
+.car-info,
+.car-owners,
+.car-transmission,
+.car-power {
+    line-height: 1.375em;
+}
+
+.car-power {
+    padding-bottom: 2.5em;
+}
+
+.price-tag {
+    width: 5em;
+    margin: -3em 0 0 auto;
+    font-size: 1.125rem;
+    font-weight: 900;
+    letter-spacing: 1.5;
+    padding: 0.75em 1em 0.75em 1.5em;
+    border-radius: 42px 0 0 0;
+}
+
+.autoscout-redirect {
+    padding: 1em;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1;
+    font-weight: 700;
+}
+
+@media screen and (min-width: 992px) {
+
+    .content-zone-autos {
+        margin: 6em auto ;
+        max-width: 900px;
+    }
+
+    .card-car-autoscout {
+        flex-direction: row;
+        max-height: 20em;
+        position: relative;
+        min-width: 100%;
+    }
+
+    .card-car-autoscout img {
+        min-width: 40%;
+        max-width: 40%;
+
+    }
+
+    .card-car-content-zone {
+        width: 60%;
+    }
+
+
+    .price-tag,
+    .autoscout-redirect {
+        position: absolute;
+        height: 1.25em;
+        width: 12rem;
+        margin: 0;
+    }
+
+    .price-tag {
+        bottom: 0;
+        width: 6rem;
+        right: 12rem;
+    }
+        
+    .autoscout-redirect {
+        bottom: 0;
+        right: 0;
+        font-size: .875rem;
+        padding: 1rem 0;
+        border-left: 3px solid white;
+        letter-spacing: 0.5;
+    }
+
+    .footer-wrapper-autos {
+        margin-top: 0;
+    }
+
+}
