@@ -80,7 +80,7 @@ background-color: #e24b4b;
     }
 
     h2 {
-        font-size: clamp(1.5rem, 1.75vw, 2.5rem);
+        font-size: clamp(1.5rem, 1.75vw, 2rem);
     }
 }
 /* ====================
@@ -565,7 +565,7 @@ nav {
     }
 
     .chi-siamo-card h3 {
-        font-size: clamp(1.5rem, 1.25vw, 2rem);
+        font-size: clamp(1.5rem, 1.25vw, 1.75rem);
         padding: 0 0 1.5rem;
     }
 
@@ -686,7 +686,7 @@ nav {
     }
 
     .la-nostra-offerta-container h3 {
-        font-size: clamp(1.25rem, 1.4vw, 1.675rem);
+        font-size: clamp(1.25rem, 1.4vw, 1.5rem);
     }
 
     .la-nostra-offerta-container p {
@@ -823,7 +823,7 @@ nav {
 
     .pic-n-title-card .icon-title {
         padding-right: 0;
-        font-size: clamp(1rem, 1.1vw, 1.275rem);;
+        font-size: clamp(1rem, 1.1vw, 1.175rem);;
         margin-top: 0.75em;
     }
 
@@ -832,12 +832,12 @@ nav {
     }
 
     .p-title {
-        font-size: clamp(1.15rem, 1.15vw, 1.5rem);
+        font-size: clamp(1.15rem, 1.15vw, 1.175rem);
         padding-bottom: 1em;
     }
 
     .p-text {
-        font-size: clamp(1rem, 1.1vw, 1.275rem);;
+        font-size: 1rem;
         line-height: 1.2;
     }
 }

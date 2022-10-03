@@ -82,7 +82,7 @@ background-color: #e24b4b;
     }
 
     h2 {
-        font-size: clamp(1.5rem, 1.75vw, 2.5rem);
+        font-size: clamp(1.5rem, 1.75vw, 2rem);
     }
 }
 /* ====================
@@ -344,12 +344,26 @@ nav {
    ==================== */
 
 .telephone-info-top {
+    display: block;
+    align-items: center;
     margin:  var(--typical-div-margin);
     margin-top: 6em;
     border: #E01B1B solid 3px;
     border-radius: .875em;
     padding: 1.75em;
 }
+
+.container-text-tel {
+    padding: 1.5em 0;
+}
+
+.common-button a {
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+    justify-content: center;
+}
+
 
 h3 {
     font-weight: 900;
@@ -408,6 +422,17 @@ textarea {
     pointer-events: none;
   }
 
+  @media screen and (min-width: 992px) {
+    .telephone-info-top {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .contaiener-text-tel {
+        padding: 0;
+    }
+  }
+
 /* ====================
         Newsletter
    ==================== */
@@ -429,6 +454,9 @@ textarea {
     color: #fff;
 }
 
+label {
+    cursor: pointer;
+}
 /* ====================
         Mappa div
    ==================== */

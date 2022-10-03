@@ -45,36 +45,38 @@
         <div class="second-background-nav el-mobile"></div>
 
                 <div class="telephone-info-top">
-                    <h3>Consigliamo di prenotare la visita telefonicamente</h3>
-                    <p>Prima di arrivare chiamaci! A volte potremmo essere in trasferta.</p>
+                    <div class="container-text-tel">
+                        <h3>Consigliamo di prenotare la visita telefonicamente</h3>
+                        <p>Prima di arrivare chiamaci! A volte potremmo essere in trasferta.</p>
+                    </div>
+                    <div class="common-button tel-button"><a href="tel:0444380052">0444 380052</a></div>
                 </div>
                 <div class="background-contatti-div">
                     <div class="contatti-div">
                         <h2>Contatti</h2>
-                        <form action="/contatti-form.php"> <!--  capire come funziona sta roba -->
+                        <form action="https://submit-form.com/HVU26OIW">
                             <li>                        
                                 <label for="fname">Nome</label>
-                                <input class="input-box" type="text" id="fname" name="fname">
+                                <input class="input-box" type="text" id="fname" name="nome" required="">
                             </li>
                             <li>
                                 <label for="lname">Cognome</label>
-                                <input class="input-box" type="text" id="lname" name="lname">
+                                <input class="input-box" type="text" id="lname" name="cognome" required="">
                             </li>
                             <li>
                                 <label for="phone-num">Telefono</label>
-                                <input class="input-box" type="tel" id="phone-num" name="phone-num">
+                                <input class="input-box" type="tel" id="phone-num" name="num-telefono" required="">
                             </li>
                             <li>
                                 <label for="email">E-Mail</label>
-                                <input class="input-box" type="text" id="email" name="email">
+                                <input class="input-box" type="email" id="email" name="email" required="">
                             </li>
                             <li class="textarea-li">
                                 <label for="msg">Messaggio</label>
-                                <textarea class="textarea" id="msg" name="user_message"></textarea><br><br>
+                                <textarea class="textarea" id="msg" name="messaggio" required=""></textarea><br><br>
                             </li>
                             <li>
-                                <!-- Per modificare input checbox https://stackoverflow.com/questions/4148499/how-to-style-a-checkbox-using-css -->
-                                <p><input class="input-tick" type="checkbox">Accetto i termini privacy</p>
+                                <p><input class="input-tick" type="checkbox" required="">Accetto i termini privacy</p>
                                 <input class="common-button" type="submit" value="Invia">
                             </li>
                         </form> 
@@ -86,18 +88,17 @@
                             <h3>Non hai trovato l'auto che stavi cercando?</h3>
                             <p>Lasciaci la tua mail per sapere quando potremmo avere qualcosa di interessante per te.</p>
                         </div>
-                        <form action="/action_page.php"> <!--  capire come funziona sta roba -->
+                        <form action="https://submit-form.com/9dK2g9oQ">
                             <li>                        
                                 <label class="white" for="email">E-Mail</label>
-                                <input class="input-box" type="text" id="email" name="email" placeholder="E-Mail">
+                                <input class="input-box" type="text" id="email" name="email" placeholder="E-Mail" required="">
                             </li>
                             <li>
                                 <label class="white" for="lname">L'auto che cercavi</label>
-                                <input class="input-box" type="text" id="newsletter" name="newsletter" placeholder="Es. Fiat Panda benzina">
+                                <input class="input-box" type="text" id="newsletter" name="auto-che-sto-cercando" placeholder="Es. Fiat Panda benzina" required="">
                             </li>
                             <li>
-                                <!-- Per modificare input checbox https://stackoverflow.com/questions/4148499/how-to-style-a-checkbox-using-css -->
-                                <p class="white"><input class="input-tick" type="checkbox">Accetto i termini privacy</p>
+                                <label><p class="white"><input class="input-tick" type="checkbox" required="">Accetto i termini privacy</p></label>
                                 <input class="common-button" type="submit" value="Ricevi offerte adatte a te">
                             </li>
                         </form> 
@@ -164,15 +165,12 @@
                         </div>
                         
                         <div class="informative">
-                            <a href="#" class="info-footer">Informativa sui cookies</a>
-                            <span>|</span>
-                            <a href="#" class="info-footer">Informativa sulla privacy</p></a>
+                            <a href="https://www.iubenda.com/privacy-policy/60901588" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Privacy Policy ">Privacy Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
                         </div>
                         <p class="credits">Sito realizzato da Andrea Zaltron</p>
                     </footer>
                 </div>
         
-                <!-- <script src="main.js" type="module"></script> -->
                 <script src="js/contacts.js"></script>
             </body>
         </html>
