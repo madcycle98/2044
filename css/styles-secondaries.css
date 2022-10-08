@@ -824,7 +824,7 @@ iframe {
     display: block;
     min-width: 90%;
     max-width: 1000px;
-    min-height: 80%;
+    min-height: 80vh;
     overflow-x: hidden;
 }
 
