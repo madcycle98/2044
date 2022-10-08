@@ -1138,6 +1138,7 @@ footer img {
 #iubenda-pp {
     padding: 1.5rem 0 0 !important;
     height: 80% !important;
+    z-index: 9999999 !important;
 }
 
 @media screen and (min-width: 992px) {
