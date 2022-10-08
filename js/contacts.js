@@ -77,3 +77,55 @@ navToggle.addEventListener("click", () => {
     }
 })
 
+/*   Go to Dove trovarci    */
+
+const doveTrov = document.getElementById("dvtrv-btn")
+
+doveTrov.addEventListener("click", () => {
+    const visibility = primaryNav.getAttribute("data-visible")
+
+    if (visibility === "false") {
+        primaryNav.setAttribute("data-visible", true)
+        navToggle.setAttribute("aria-expanded", true)
+        stickyMenu.style.display = "none";
+    }
+
+    else if (visibility === "true") {
+        primaryNav.setAttribute("data-visible", false)
+        navToggle.setAttribute("aria-expanded", false)
+        stickyMenu.style.display = "flex";
+    }
+})
+
+/*   aggiungi underline a intersection con dove trovarci    */
+
+const mappaDiv = document.getElementById("mappa-div")
+const contattiId = document.getElementById("contatti-id")
+const doveTrovarciId = document.getElementById("dvtrv-btn")
+
+function mappaDivObserver(){
+if (window.screen.width < 992) {
+    const sectionOneOptions = {};
+
+
+const chiSiamoObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if(!entry.isIntersecting) {
+            doveTrovarciId.classList.remove("actif");
+            contattiId.classList.add("actif");
+            console.log("bella")
+        }
+        else {
+            doveTrovarciId.classList.add("actif");
+            contattiId.classList.remove("actif");
+            console.log("nonbella")
+        }
+        });
+    },
+sectionOneOptions)
+
+chiSiamoObserver.observe(mappaDiv)
+}
+}
+
+mappaDivObserver()

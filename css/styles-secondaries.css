@@ -125,33 +125,32 @@ nav {
 .nav-menu-mobile {
     z-index: 1;
     position: fixed;
-    display: flex;
-    flex-direction: column;
     background-color: var(--celeste);
     height: 100vh;
-    width: 50vw;
-    transform: translateX(150%);
-    justify-content: space-around;
-    padding: 0 3em;
+    width: 80vw;
+    transform: translateX(210%);
     transition: all 0.3s ease-in-out;
-    margin-top: -4.5em;
 }
-
-
-.el-mobile {
+.mob-men-wrapper a {
     text-decoration: none;
     color: #fff;
     font-size: 1.5rem;
     font-weight: 700;
 }
 
-.actif{
-    padding: 0.25em 0;
-    border-bottom: 5px solid white;
-}
-
 .nav-menu-mobile[data-visible="true"] {
     transform: translateX(50%);
+}
+
+.mob-men-wrapper {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5em 2.75em;
+    height: 70vh;
+    width: 50vw;
+    background-color: var(--celeste);
 }
 
 .nav-logo img{
@@ -188,6 +187,12 @@ nav {
     padding: 0.65em 1em;
     background-color: var(--cta-color);
     border-radius: .45em;
+}
+
+@media screen  and (max-width: 420px) {
+    .nav-menu-mobile a {
+        font-size: 1.2rem;
+    }
 }
 
 @media screen and (min-width: 600px) and (max-width: 1023px) {
@@ -334,6 +339,10 @@ nav {
     transition-duration: 300ms;
 }
 
+.actif{
+    padding: 0.25em 0;
+    border-bottom: 5px solid white;
+}
 
 /* ====================
         /Nav
@@ -347,10 +356,13 @@ nav {
     display: block;
     align-items: center;
     margin:  var(--typical-div-margin);
-    margin-top: 6em;
     border: #E01B1B solid 3px;
     border-radius: .875em;
     padding: 1.75em;
+}
+
+.spacer {
+    padding-bottom: 4em;
 }
 
 .container-text-tel {
@@ -392,7 +404,6 @@ li p {
 }
 
 .input-tick {
-     /* Per modificare input checbox https://stackoverflow.com/questions/4148499/how-to-style-a-checkbox-using-css */
     padding-left: 1em;
     border: none;
     border-radius: .5em;
@@ -416,8 +427,8 @@ textarea {
 .h2-map-wrapper h2::before { 
     display: block; 
     content: " "; 
-    margin-top: -285px; 
-    height: 345px; 
+    margin-top: -105px; 
+    height: 105px; 
     visibility: hidden; 
     pointer-events: none;
   }
@@ -809,7 +820,21 @@ footer img {
 }
 
 iframe {
-    height: 95%;
+    margin: 2em auto;
+    display: block;
+    min-width: 90%;
+    max-width: 1000px;
+    min-height: 80%;
+    overflow-x: hidden;
+}
+
+.top-h2 {
+    margin: 2em auto;
+}
+
+#iubenda-pp {
+    padding: 1.5rem 0 !important;
+    height: 80% !important;
 }
 
 @media screen and (min-width: 992px) {
@@ -865,7 +890,6 @@ iframe {
     }
 
     iframe {
-        height: 85%;
+        min-width: 75%;
     }
-
 }
