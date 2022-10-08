@@ -683,7 +683,7 @@ nav {
     margin: 0 auto;
 }
 
-.la-nostra-offerta-wrapper button {
+.la-nostra-offerta-wrapper span {
     margin: 3.5em auto;
     padding: 1em;
     text-decoration: none;
@@ -745,7 +745,7 @@ nav {
         max-height: 7em;
     }
 
-    .la-nostra-offerta-wrapper button {
+    .la-nostra-offerta-wrapper span {
         overflow-x: hidden;
         margin: 3.5em 0 0 0;
         border-radius: 0;
