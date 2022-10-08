@@ -683,8 +683,17 @@ nav {
     margin: 0 auto;
 }
 
+.la-nostra-offerta-wrapper a {
+    margin: 2em;
+}
+
+
+
 .scopriparcoauto {
-    margin: 3.5em auto;
+    display: flex;
+    justify-content: center;
+    max-width: 25em;
+    margin: auto;
     padding: 1em;
     text-decoration: none;
     text-transform: uppercase;
@@ -692,6 +701,10 @@ nav {
     font-weight: 400;
     -webkit-box-shadow: 0 10px 6px 1px rgba(0, 0, 0, 0.15);
     box-shadow: 0 10px 6px 1px rgba(0, 0, 0, 0.15);
+}
+
+.scopriparcoauto span {
+margin: auto;
 }
 
 .el-desktop,
@@ -745,12 +758,17 @@ nav {
         max-height: 7em;
     }
 
+    .la-nostra-offerta-wrapper a {
+        margin: 0;
+    }
+        
     .scopriparcoauto {
         overflow-x: hidden;
         margin: 3.5em 0 0 0;
         border-radius: 0;
         padding: 0;
         width: 100%;
+        max-width: 100%;
         height: 3em;
         font-size: 1.5rem;
         font-weight: 700;
